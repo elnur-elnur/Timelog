@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import TimeLogList from "./components/TimeLogList";
+import NewTimeLogForm from "./components/NewTimeLogForm";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1 className="project_title">My time log</h1>
+      <div className="app-body">
+        <TimeLogList />
+        <NewTimeLogForm />
+      </div>
     </div>
   );
 }
