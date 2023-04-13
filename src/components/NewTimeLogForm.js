@@ -25,25 +25,29 @@ function NewTimeLogForm() {
 
   return (
     <form onSubmit={handleSubmit} className="timelog_form">
-      <label>
+      <label className="label">
         Description:
         <input
           type="text"
           placeholder="Description..."
           value={reason}
           onChange={(event) => setReason(event.target.value)}
+          className="input"
         />
       </label>
-      <label>
+      <label className="label">
         Time spent:
         <input
           type="text"
           placeholder="Time spent..."
           value={timeSpent}
           onChange={(event) => setTimeSpent(event.target.value)}
+          className="input"
         />
       </label>
-      <button type="submit">Add Time Log</button>
+      <button className="btn" type="submit">
+        Add Time Log
+      </button>
     </form>
   );
 }

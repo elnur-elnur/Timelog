@@ -29,10 +29,21 @@ function TimeLogList() {
   }, []);
 
   return (
-    <div>
-      {timeLogs.map((timeLog) => (
-        <TimeLog key={timeLog.id} {...timeLog} />
-      ))}
+    <div style={{ gridColumn: "1 / 6" }}>
+      {timeLogs.length > 0 ? (
+        <table>
+          <tr>
+            <th>Description</th>
+            <th>Time Spent</th>
+            <th>Date</th>
+          </tr>
+          {timeLogs.map((timeLog) => (
+            <TimeLog key={timeLog.id} {...timeLog} />
+          ))}
+        </table>
+      ) : (
+        "Yuklenir..."
+      )}
     </div>
   );
 }
