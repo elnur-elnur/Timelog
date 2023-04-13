@@ -9,18 +9,19 @@ function NewTimeLogForm() {
   const timeLogsCollectionRef = collection(db, "time-logg");
 
   const handleSubmit = async (event) => {
-    // TODO: Add new time log to Firebase database and update display
     try {
       event.preventDefault();
 
-      await addDoc(timeLogsCollectionRef, {
-        description: reason,
-        timespent: timeSpent,
-        date: new Date(),
-      });
+      if (reason && timeSpent) {
+        await addDoc(timeLogsCollectionRef, {
+          description: reason,
+          timespent: timeSpent,
+          date: new Date(),
+        });
 
-      setReason("");
-      setTimeSpent("");
+        setReason("");
+        setTimeSpent("");
+      }
     } catch (error) {
       console.log(error);
     }
