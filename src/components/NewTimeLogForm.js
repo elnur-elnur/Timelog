@@ -1,13 +1,26 @@
 // src/NewTimeLogForm.js
 import React, { useState } from "react";
+import { db } from "../config/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 function NewTimeLogForm() {
   const [reason, setReason] = useState("");
   const [timeSpent, setTimeSpent] = useState("");
+  const timeLogsCollectionRef = collection(db, "time-logg");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = async (event) => {
     // TODO: Add new time log to Firebase database and update display
+    try {
+      event.preventDefault();
+
+      await addDoc(timeLogsCollectionRef, {
+        description: reason,
+        timespent: timeSpent,
+        date: new Date(),
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

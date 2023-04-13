@@ -1,14 +1,13 @@
 // src/TimeLog.js
-import React from 'react';
+import React from "react";
 
 function TimeLog(props) {
-  const { reason, timeSpent, datetime } = props;
+  const { description, timespent } = props;
 
   return (
     <div>
-      <p>{reason}</p>
-      <p>{timeSpent}</p>
-      <p>{datetime}</p>
+      <p>{description}</p>
+      <p>{timespent}</p>
     </div>
   );
 }
