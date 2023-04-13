@@ -30,6 +30,10 @@ function TimeLogList() {
   }, []);
 
   useEffect(() => {
+    getTimeLogs();
+  }, [timeLogs]);
+
+  useEffect(() => {
     timeLogs.map((i) => {
       setblockTime(moment(i.date.seconds * 1000).format("L"));
     });
@@ -37,7 +41,7 @@ function TimeLogList() {
 
   return (
     <div style={{ gridColumn: "1 / 3" }}>
-      <h2>{blockTime}</h2>
+      <h2 className="block_time">{blockTime}</h2>
       {timeLogs.length > 0 ? (
         <table>
           <thead>
