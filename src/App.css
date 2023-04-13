@@ -4,11 +4,12 @@
 }
 
 .project_title {
-  color: red;
+  color: black;
   margin-bottom: 20px;
 }
 
 .timelog_form {
+  grid-column: 3 / 3;
   display: flex;
   flex-direction: column;
 }
@@ -27,12 +28,17 @@
   display: flex;
   margin-left: 10px;
   padding: 0 15px;
+  flex: 1;
+  font-size: 18px;
 }
 
 .app-body {
   display: grid;
   gap: 20px;
-  grid-template-columns: auto auto auto auto auto auto;
+}
+
+table {
+  width: 100%;
 }
 
 table,
@@ -44,7 +50,8 @@ td {
 
 th,
 td {
-  padding: 5px 30px;
+  text-align: left;
+  padding: 15px;
 }
 
 .btn {

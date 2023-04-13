@@ -26,20 +26,24 @@ function TimeLogList() {
     };
 
     getTimeLogs();
-  }, []);
+  }, [timeLogsCollectionRef]);
 
   return (
-    <div style={{ gridColumn: "1 / 6" }}>
+    <div style={{ gridColumn: "1 / 3" }}>
       {timeLogs.length > 0 ? (
         <table>
-          <tr>
-            <th>Description</th>
-            <th>Time Spent</th>
-            <th>Date</th>
-          </tr>
-          {timeLogs.map((timeLog) => (
-            <TimeLog key={timeLog.id} {...timeLog} />
-          ))}
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Time Spent</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {timeLogs.map((timeLog) => (
+              <TimeLog key={timeLog.id} {...timeLog} />
+            ))}
+          </tbody>
         </table>
       ) : (
         "Yuklenir..."

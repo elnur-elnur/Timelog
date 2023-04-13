@@ -18,6 +18,9 @@ function NewTimeLogForm() {
         timespent: timeSpent,
         date: new Date(),
       });
+
+      setReason("");
+      setTimeSpent("");
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +29,7 @@ function NewTimeLogForm() {
   return (
     <form onSubmit={handleSubmit} className="timelog_form">
       <label className="label">
-        Description:
+        Description
         <input
           type="text"
           placeholder="Description..."
@@ -36,7 +39,7 @@ function NewTimeLogForm() {
         />
       </label>
       <label className="label">
-        Time spent:
+        Time spent
         <input
           type="text"
           placeholder="Time spent..."
